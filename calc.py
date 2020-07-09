@@ -1,8 +1,12 @@
 import data
 
-# input variables (from data.py)
-total_budget = data.total_budget
-duration = data.duration
+# input variables 
+total_budget = 0
+duration = 0
+def set_inputs():
+    global total_budget, duration 
+    total_budget = int(input("What is your budget? "))
+    duration = int(input("How many days are you staying? "))
 
 # function-set variables
 total_expenses = 0
@@ -38,9 +42,9 @@ def set_housing():
     h_budget = total_budget - set_travel_expenses()
     print("total budget: " + str(total_budget))
     print("housing budget: " + str(h_budget))
-    if duration * data.housing["expensive"] < h_budget: # if can afford expensive housing
+    if duration * data.housing["expensive"] <= h_budget: # if can afford expensive housing
         housing_choice = "expensive"
-    elif duration * data.housing["cheap"] < h_budget: # if can afford cheap housing
+    elif duration * data.housing["cheap"] <= h_budget: # if can afford cheap housing
         housing_choice = "cheap"
     else:
         return "You can't afford housing! :(( "

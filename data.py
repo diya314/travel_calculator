@@ -1,6 +1,3 @@
-# input variables
-total_budget = 0
-duration = 0
 
 travel = {
     "expensive":1500,
